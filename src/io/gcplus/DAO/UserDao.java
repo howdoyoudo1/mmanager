@@ -24,24 +24,26 @@ public class UserDao {
 	         * where表示限制条件
 	         * 
 	         */
-	        String sql="select * from teacher ";
+	        String sql="select * from teacher";
 	        PreparedStatement stmt= conn.prepareStatement(sql);
-	        ResultSet rs=    stmt.executeQuery();
-	        List<Teacher> petList=new ArrayList<Teacher>();
+	        ResultSet rs= stmt.executeQuery();
+	        List<Teacher> teacherList=new ArrayList<Teacher>();
 	        while(rs.next()) {
-	            Teacher pet=new Teacher(/**
-	                    rs.getInt("id"),
-	                    rs.getInt("owner_id"),
-	                    rs.getInt("store_id"),
-	                    rs.getString("name"),
-	                    rs.getString("type_name"),
-	                    rs.getInt("health"),
-	                    rs.getInt("love"),
-	                    rs.getDate("birthday")**/
+	            Teacher teacher=new Teacher(
+	            		rs.getString("name"),
+	            		rs.getInt("age"),
+	            		rs.getByte("sex"),
+	            		rs.getString("type"),
+	            		rs.getString("post"),
+	            		rs.getString("title"),
+	            		rs.getString("education"),
+	            		rs.getString("politic"),
+	            		rs.getDate("collegetime"),
+	            		rs.getDate("worktime")
 	                    );
-	                petList.add(pet);
+	                teacherList.add(teacher);
 	        }
 	        MySQLConnect.closeAll(conn, stmt, rs);
-	        return petList;
+	        return teacherList;
 	    }
 }

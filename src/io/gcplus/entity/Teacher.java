@@ -2,9 +2,6 @@ package io.gcplus.entity;
 
 import java.util.Date;
 
-import io.gcplus.entity.post.post;
-import io.gcplus.entity.type.Type;
-
 /**
  * 教师类，包含老师的姓名，性别，年龄
  * 
@@ -25,11 +22,11 @@ public class Teacher {
 	// 姓名
 	private String name;
 	// 性别（男，女，我不想告诉你）
-	private String sex;
+	private int sex;
 	// 年龄（女人的年龄是秘密）
 	private int age;
 	// 类别
-	private Type type;
+	private String type;
 	// 职务
 	private String post;
 	// 职称
@@ -39,9 +36,28 @@ public class Teacher {
 	// 政治面貌
 	private String politic;
 	// 进院时间
-	private Date collegetime;
+	private Date collegeTime;
 	// 工作时间
-	private Date worktime;
+	private Date workTime;
+	//不带参数的构造方法（无参）
+	public Teacher() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	//显式构造方法（带参数的）
+	public Teacher(String name, int age, int sex, String type, String post,String title, String education,
+			String politic, Date collegeTime, Date workTime) {
+		this.name = name;
+		this.age = age;
+		this.sex = sex;
+		this.type = type;
+		this.post = post;
+		this.title = title;
+		this.education = education;
+		this.politic = politic;
+		this.collegeTime = collegeTime;
+		this.workTime = workTime;
+	}
 
 	public String getName() {
 		return name;
@@ -51,11 +67,11 @@ public class Teacher {
 		this.name = name;
 	}
 
-	public String getSex() {
+	public int getSex() {
 		return sex;
 	}
 
-	public void setSex(String sex) {
+	public void setSex(int sex) {
 		this.sex = sex;
 	}
 
@@ -67,11 +83,11 @@ public class Teacher {
 		this.age = age;
 	}
 
-	public Type getType() {
+	public String getType() {
 		return type;
 	}
 
-	public void setType(Type type) {
+	public void setType(String type) {
 		this.type = type;
 	}
 
@@ -107,20 +123,20 @@ public class Teacher {
 		this.politic = politic;
 	}
 
-	public Date getCollegetime() {
-		return collegetime;
+	public Date getCollegeTime() {
+		return collegeTime;
 	}
 
-	public void setCollegetime(Date collegetime) {
-		this.collegetime = collegetime;
+	public void setCollegeTime(Date collegeTime) {
+		this.collegeTime = collegeTime;
 	}
 
-	public Date getWorktime() {
-		return worktime;
+	public Date getWorkTime() {
+		return workTime;
 	}
 
-	public void setWorktime(Date worktime) {
-		this.worktime = worktime;
+	public void setWorkTime(Date workTime) {
+		this.workTime = workTime;
 	}
 
 	private String teacher;// 教师

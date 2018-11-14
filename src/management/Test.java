@@ -45,7 +45,21 @@ public class Test {
 		System.out.println("请输入姓名");
 		one.setName(sc.nextLine());
 		System.out.println("请输入性别");
-		one.setSex(sc.nextLine());
+		System.out.println("1. 男");
+		System.err.println("2. 女");
+		System.out.println("3. 外星人");
+		int sexNum = sc.nextInt();
+		if (sexNum == 1) {
+			one.setSex(1);
+		}else if (sexNum == 2) {
+			one.setSex(2);
+		}if (sexNum == 3) {
+			one.setSex(0);
+		}else {
+			System.err.println("你打算创造新人类吗？");
+			main(null);
+		}
+		
 		System.out.println("请输入年龄");
 		one.setAge(sc.nextInt());
 
@@ -56,11 +70,11 @@ public class Test {
 		System.out.println("3. 实验员");
 		int typeNum = sc.nextInt();
 		if (typeNum == 1) {
-			one.setType(Type.TEACHER);
+			one.setType(Type.TEACHER.toString());
 		} else if (typeNum == 2) {
-			one.setType(Type.EXECUTIVE_STAFF);
+			one.setType(Type.EXECUTIVE_STAFF.toString());
 		} else if (typeNum == 3) {
-			one.setType(Type.LAB_ASSISTANT);
+			one.setType(Type.LAB_ASSISTANT.toString());
 		} else {
 			System.err.println("请输入正确编号!");
 			main(null);
@@ -150,10 +164,10 @@ public class Test {
 		one.setPolitic(sc.next());
 
 		System.out.println("请输入来院时间");
-		one.setCollegetime(string2Date(sc.next()));
+		one.setCollegeTime(string2Date(sc.next()));
 
 		System.out.println("请输入工作时间");
-		one.setWorktime(string2Date(sc.next()));
+		one.setCollegeTime(string2Date(sc.next()));
 		sc.close();
 		return one;
 	}
@@ -168,8 +182,8 @@ public class Test {
 				"\n职称:" + one.getTitle() + 
 				"\n学历:" + one.getEducation() + 
 				"\n政治面貌:" + one.getPolitic() + 
-				"\n来院时间:" + dateFormat.format(one.getCollegetime()) +
-				"\n工作时间:" + dateFormat.format(one.getWorktime()));
+				"\n来院时间:" + dateFormat.format(one.getCollegeTime()) +
+				"\n工作时间:" + dateFormat.format(one.getCollegeTime()));
 	}
 	
 }
