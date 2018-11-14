@@ -15,11 +15,16 @@ import io.gcplus.entity.Teacher;
  * @author Acer
  *
  */
-public class UserSelect {
+public class UserDao {
 	//查找所有用户
-	 public List<Teacher> findAllPets() throws Exception {
+	 public List<Teacher> findAllTeachers() throws Exception {
 	        Connection conn=MySQLConnect.getConnection();
-	        String sql="select * from pet";
+	        /**
+	         * *代表所有的意思
+	         * where表示限制条件
+	         * 
+	         */
+	        String sql="select * from teacher ";
 	        PreparedStatement stmt= conn.prepareStatement(sql);
 	        ResultSet rs=    stmt.executeQuery();
 	        List<Teacher> petList=new ArrayList<Teacher>();

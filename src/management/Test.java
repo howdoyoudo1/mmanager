@@ -14,12 +14,13 @@ import io.gcplus.entity.post.post;
 import io.gcplus.entity.type.ExecutiveType;
 import io.gcplus.entity.type.Type;
 import io.gcplus.entity.title.*;
+import io.gcplus.entity.Teacher;
 import io.gcplus.entity.education.*;
 
 public class Test {
 
 	public static void main(String[] args) {
-		teacher teacher = scannerInfo();
+		Teacher teacher = scannerInfo();
 		showInfo(teacher);
 	}
 
@@ -38,9 +39,9 @@ public class Test {
 		return null;
 	}
 
-	public static teacher scannerInfo() {
+	public static Teacher scannerInfo() {
 		Scanner sc = new Scanner(System.in);
-		teacher one = new teacher();
+		Teacher one = new Teacher();
 		System.out.println("请输入姓名");
 		one.setName(sc.nextLine());
 		System.out.println("请输入性别");
@@ -157,7 +158,7 @@ public class Test {
 		return one;
 	}
 
-	public static void showInfo(teacher one) {
+	public static void showInfo(Teacher one) {
 		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		System.out.println("姓名:" + one.getName() +
 				"\n性别:" + one.getSex() +
